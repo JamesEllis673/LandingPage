@@ -1,0 +1,210 @@
+@import '../styles/colors';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes headline {
+  from {
+    opacity: 10%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes headline2 {
+  from {
+    transform: scale(0.8);
+    margin-inline: 0;
+  }
+
+  to {
+    transform: scale(1);
+    margin-inline: 3vw;
+  }
+}
+
+@keyframes heroImage {
+  from {
+    clip-path: inset(25vw);
+    opacity: 0;
+  }
+
+  to {
+    clip-path: inset(5vw);
+    opacity: 100%;
+  }
+}
+
+.app {
+  &-container {
+    height: 100vh;
+  }
+
+  &-header {
+    height: 8vw;
+  }
+
+  &-headerContainer {
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out backwards 1.9s;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+    width: 90vw;
+  }
+
+  &-headerLogo {
+    color: $app-text;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: calc(12pt + 1.2vw);
+    margin-top: 18px;
+  }
+
+  &-headerNavBar {
+    margin-top: 18px;
+  }
+
+  &-headerNavOptions {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+
+  &-headerTextNavOption {
+    color: $app-text;
+    cursor: pointer;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: calc(2.5pt + 1vw);
+    margin-right: calc(10px + 1vw);
+    transition: color ease 0.3s;
+  }
+
+  &-headerTextNavOption:hover {
+    color: $app-textHover;
+  }
+
+  &-headerSandwichMenu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 2vw;
+    z-index: 999;
+  }
+
+  &-headerSandwichMenuBar {
+    background-color: $app-text;
+    border-radius: 5px;
+    height: calc(3px + 0.07vw);
+    margin-block: calc(0.7px + 0.07vw);
+    transition: background-color ease 0.3s;
+    width: calc(15px + 0.7vw);
+  }
+
+  &-headerSandwichMenu:hover &-headerSandwichMenuBar {
+    background-color: $app-textHover;
+  }
+
+  &-hero {
+    padding-block: calc(20px + 8vw) calc(20px + 5vw);
+  }
+
+  &-heroContainer {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  &-headlineContainer {
+    color: $app-text;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: 7vw;
+    margin: auto;
+    position: relative;
+    width: 90vw;
+    z-index: 1;
+  }
+
+  &-headlineLineContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-headlineWordContainer {
+    opacity: 100%;
+    margin-inline: 3vw;
+  }
+
+  &-word--1 {
+    animation: headline 1s ease backwards 0.2s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--2 {
+    animation: headline 1s ease backwards 0.5s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--3 {
+    animation: headline 1s ease backwards 0.9s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--4 {
+    animation: headline 1s ease, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--5 {
+    animation: headline 1s ease backwards 0.8s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--6 {
+    animation: headline 1s ease backwards 0.4s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--7 {
+    animation: headline 1s ease backwards 0.6s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--8 {
+    animation: headline 1s ease backwards 0.3s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--9 {
+    animation: headline 1s ease backwards 0.7s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-word--10 {
+    animation: headline 1s ease backwards 0.1s, headline2 1.5s ease-in-out backwards 0.8s;
+  }
+
+  &-heroImageContainer {
+    animation: heroImage 1.5s ease-in-out backwards 0.8s;
+    clip-path: inset(5vw);
+    height: 100vh;
+    margin-top: -9.3vw;
+    position: relative;
+    width: 100%;
+  }
+
+  &-heroImage {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    &-headerTextNavOption {
+      display: none;
+    }
+  }
+}
