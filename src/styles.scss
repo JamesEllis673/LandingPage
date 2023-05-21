@@ -8,3 +8,7 @@ body {
   background-color: $app-background;
   margin: 0;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

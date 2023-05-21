@@ -42,6 +42,26 @@
   }
 }
 
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-15vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(15vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .app {
   &-container {
     height: 100vh;
@@ -117,7 +137,7 @@
   }
 
   &-hero {
-    padding-block: calc(20px + 8vw) calc(20px + 5vw);
+    padding-block: calc(20px + 6vw) calc(20px + 5vw);
   }
 
   &-heroContainer {
@@ -202,9 +222,73 @@
     width: 100%;
   }
 
+  &-about {
+    padding-bottom: calc(30px + 5vw);
+  }
+
+  &-aboutContainer {
+    color: $app-text;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    position: relative;
+    width: 80vw;
+    margin: auto;
+  }
+
+  &-aboutHeaderContainer {
+    margin-right: 35vw;
+    margin-bottom: 2vw;
+  }
+
+  &-aboutHeader {
+    font-size: calc(12pt + 2vw);
+  }
+
+  &-aboutTextContainer {
+    margin-left: 35vw;
+    margin-bottom: 2vw;
+  }
+
+  &-aboutText {
+    font-size: calc(5pt + 0.8vw);
+  }
+
+  &-aboutButton {
+    all: unset;
+    background-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: calc(10pt + 0.4vw);
+    font-weight: bold;
+    height: calc(40px + 1vw);
+    text-align: center;
+    transition: opacity 2s ease, background-color 0.3s ease !important;
+    width: calc(140px + 1vw);
+  }
+
+  &-aboutButton:hover {
+    background-color: ghostwhite;
+  }
+
   @media only screen and (max-width: 600px) {
     &-headerTextNavOption {
       display: none;
     }
   }
+}
+
+.reveal {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.reveal.active {
+  opacity: 100%;
+}
+
+.slideFromLeft.active {
+  animation: slideFromLeft 2s ease-out;
+}
+
+.slideFromRight.active {
+  animation: slideFromRight 2s ease-out;
 }
